@@ -29,9 +29,10 @@ header {
   display: flex;
   flex-direction: 1p 1p;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 header .city {
-  font-size: 60px;
+  font-size: 70px;
   font-weight: 800;
 }
 header .now {
@@ -40,11 +41,17 @@ header .now {
 .tempDisplay {
   display: flex;
   flex-direction: 1p 1p;
-  justify-content: space-between;
+  text-align: center;
+  width: 100px;
+  margin: 0 auto;
 }
 .temperature .tempNow {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 800;
+}
+.temperature .units {
+  position: relative;
+  top: -15px;
 }
 .temperature .minMax {
   width: 100px;
@@ -61,6 +68,9 @@ header .now {
 }
 .max .temp {
   color: rgba(249, 42, 42, 0.897);
+}
+.icon {
+  margin-top: 10px;
 }
 .details {
   width: 300px;
