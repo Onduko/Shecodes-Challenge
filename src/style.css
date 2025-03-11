@@ -27,6 +27,7 @@ form {
 }
 header {
   display: flex;
+  flex-direction: 1p 1p;
   justify-content: space-between;
 }
 header .city {
@@ -36,7 +37,7 @@ header .city {
 header .now {
   margin-top: 30px;
 }
-main {
+.tempDisplay {
   display: flex;
   flex-direction: 1p 1p;
   justify-content: space-between;
@@ -56,10 +57,10 @@ main {
   font-weight: 700;
 }
 .min .temp {
-  color: blue;
+  color: rgb(53, 53, 207);
 }
 .max .temp {
-  color: red;
+  color: rgba(249, 42, 42, 0.897);
 }
 .details {
   width: 300px;
@@ -73,4 +74,7 @@ main {
 footer {
   text-align: center;
   font-size: 12px;
+}
+a {
+  color: #0a549e;
 }
