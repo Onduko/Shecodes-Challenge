@@ -4,42 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherApp</title>
+    <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
-    <form>
+    <div class="container"><form>
       <input type="text" , id="search-city-input" , placeholder="Search City" />
       <input type="submit" , id="search-city-submit" , value="Search" />
     </form>
     <header>
-      <span class="city">Seoul</span
-      ><span class="date"> Teusday, 11 March 2025</span>
+      <div class="city">Seoul</div
+      >
+      <div class="now"> <span class="time">15:36</span> <br> <span class="date"> Tuesday, 11 March 2025</span></div>
     </header>
     <main>
       <div class="temperature">
-        <span class="tempNow">25</span><span class="units">0C</span><br />
-        <span class="Min">Min <span class="temp">10</span></span>
-        <span class="Max">Max <span class="temp">20</span></span>
-      </div>
+        <span class="tempNow">25</span><span class="units"> 0C</span>
+        <div class="minMax"><div class="min">Min <span class="temp">10</span></div>
+        <span class="max">Max <span class="temp">20</span></div></div>
       <div class="icon">ö</div>
-      <div class="details">
-        <span class="description">Scattered Clouds</span>
-      </div>
-      <div class="details">
-        <span class="feelsLike"
-          >Feels like <span class="feelsLikeTemp"></span>30 0C</span
-        >
-      </div>
-      <div class="details">
-        <span class="humidity"
-          >Humidity <span class="humidityPercentage">80%</span></span
-        >
-      </div>
-      <div class="details">
-        <span class="wind">Wind <span class="windSpeed">10 km/h</span></span>
-      </div>
     </main>
+      
+      <p><div class="details">
+        <div class="description">Scattered Clouds</span>
+      </div>
+        <div class="feelsLike"
+          >Feels like <span class="feelsLikeTemp">30 0C</span></div
+        >
+        <div class="humidity"
+          >Humidity <span class="humidityPercentage">80%</span></div
+        >
+        <div class="wind">Wind <span class="windSpeed">10 km/h</span></div>
+      </div></p>
     <footer>
       Coded by Daisy Onduko is open sourced on GitHub and hosted on Netlify
-    </footer>
+    </footer></div>
   </body>
 </html>
