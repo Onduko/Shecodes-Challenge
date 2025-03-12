@@ -32,7 +32,7 @@ header {
   margin-bottom: 30px;
 }
 header .city {
-  font-size: 70px;
+  font-size: 60px;
   font-weight: 800;
 }
 header .now {
@@ -44,24 +44,23 @@ header .time {
 }
 .tempDisplay {
   display: flex;
-  flex-direction: 1p 1p;
   text-align: center;
-  width: 100px;
+  width: 200px;
   margin: 0 auto;
+  justify-content: space-around;
 }
 .temperature .tempNow {
   font-size: 50px;
   font-weight: 800;
 }
-.temperature .units {
-  position: relative;
-  top: -15px;
-}
 .temp {
   font-weight: 700;
 }
 .icon {
-  margin-top: 10px;
+  position: relative;
+  top: -20px;
+  left: -20px;
+  transform: scale(0.7);
 }
 .details {
   width: 300px;
