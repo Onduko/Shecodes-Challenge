@@ -38,6 +38,10 @@ header .city {
 header .now {
   margin-top: 30px;
 }
+header .time {
+  font-size: 20px;
+  font-weight: 600;
+}
 .tempDisplay {
   display: flex;
   flex-direction: 1p 1p;
