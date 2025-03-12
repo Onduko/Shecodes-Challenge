@@ -63,12 +63,6 @@ header .now {
 .temp {
   font-weight: 700;
 }
-.min .temp {
-  color: rgb(53, 53, 207);
-}
-.max .temp {
-  color: rgba(249, 42, 42, 0.897);
-}
 .icon {
   margin-top: 10px;
 }
