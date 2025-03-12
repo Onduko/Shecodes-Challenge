@@ -1,6 +1,11 @@
 let time = document.querySelector(".time");
 let date = document.querySelector(".date");
 dateToday = new Date();
+if (dateToday.getMinutes() > 10) {
+  time.innerHTML = `${dateToday.getHours()}:${dateToday.getMinutes()}`;
+} else {
+  time.innerHTML = `${dateToday.getHours()}:0${dateToday.getMinutes()}`;
+}
 let day = [
   "Sunday",
   "Monday",
@@ -34,10 +39,7 @@ let feelsLike = document.querySelector(".feelsLike");
 let humidity = document.querySelector(".humidity");
 let wind = document.querySelector(".wind");
 
-function showWeather(response) {
-  timeNow = new Date(response.data.time * 1000);
-  time.innerHTML = `${timeNow.getHours()}:${timeNow.getMinutes()}`;
-}
+function showWeather(response) {}
 function weather(city) {
   let apiKey = `9b5ff5067a4fcbft35338801bbo0df4a`;
   let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;

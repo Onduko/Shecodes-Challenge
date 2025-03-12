@@ -53,13 +53,6 @@ header .now {
   position: relative;
   top: -15px;
 }
-.temperature .minMax {
-  width: 100px;
-  font-size: 12px;
-  display: flex;
-  flex-direction: 1p 1p;
-  justify-content: space-between;
-}
 .temp {
   font-weight: 700;
 }
