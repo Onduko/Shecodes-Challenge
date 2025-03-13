@@ -46,8 +46,9 @@ header .time {
   display: flex;
   text-align: center;
   width: 200px;
+  height: 50px;
   margin: 0 auto;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .temperature .tempNow {
   font-size: 50px;
@@ -56,11 +57,12 @@ header .time {
 .temp {
   font-weight: 700;
 }
-.icon {
+.iconImage {
   position: relative;
   top: -20px;
   left: -20px;
   transform: scale(0.7);
+  margin: 0;
 }
 .details {
   width: 300px;

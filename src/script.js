@@ -1,3 +1,5 @@
+let cityInput = document.querySelector("#search-city-input");
+let city = document.querySelector(".city");
 let time = document.querySelector(".time");
 let date = document.querySelector(".date");
 dateToday = new Date();
@@ -41,7 +43,7 @@ let windSpeed = document.querySelector(".windSpeed");
 
 function showWeather(response) {
   tempNow.innerHTML = Math.round(response.data.temperature.current);
-  icon.innerHTML = `<img src="${response.data.condition.icon_url}">`;
+  icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="iconImage">`;
   description.innerHTML = response.data.condition.description;
   feelsLikeTemp.innerHTML = `:${Math.round(
     response.data.temperature.feels_like
@@ -50,6 +52,7 @@ function showWeather(response) {
     response.data.temperature.humidity
   )}%`;
   windSpeed.innerHTML = `:${Math.round(response.data.wind.speed)} km/hr`;
+  city.innerHTML = response.data.city;
 }
 function weather(city) {
   let apiKey = `9b5ff5067a4fcbft35338801bbo0df4a`;
@@ -58,8 +61,6 @@ function weather(city) {
 }
 function searchCity(event) {
   event.preventDefault();
-  let cityInput = document.querySelector("#search-city-input");
-  let city = document.querySelector(".city");
   city.innerHTML = cityInput.value;
   weather(cityInput.value);
 }
