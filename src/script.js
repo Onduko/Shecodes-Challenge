@@ -41,19 +41,27 @@ let feelsLikeTemp = document.querySelector(".feelsLikeTemp");
 let humidityPercentage = document.querySelector(".humidityPercentage");
 let windSpeed = document.querySelector(".windSpeed");
 let body = document.querySelector("body");
-let WeatherForecast = document.querySelector(".forecast");
+let forecast = document.querySelector(".forecast");
+forecast.innerHTML += `<div class="day">${days[dateToday.getDay()]}</div>
+      <div class="forecastIcon">Ö</div>
+      <div class="temperatureExtremes">
+      <div class="max">20°C</div>
+      <div class="min">10°C</div>
+      </div>`;
 
 function showWeather(response) {
   tempNow.innerHTML = Math.round(response.data.temperature.current);
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="iconImage">`;
   description.innerHTML = response.data.condition.description;
-  feelsLikeTemp.innerHTML = `: ${Math.round(
+  feelsLikeTemp.innerHTML = `Feels like: ${Math.round(
     response.data.temperature.feels_like
   )}°C`;
-  humidityPercentage.innerHTML = `: ${Math.round(
+  humidityPercentage.innerHTML = `Humidity: ${Math.round(
     response.data.temperature.humidity
   )}%`;
-  windSpeed.innerHTML = `: ${Math.round(response.data.wind.speed)} km/hr`;
+  windSpeed.innerHTML = `Wind Speed: ${Math.round(
+    response.data.wind.speed
+  )} km/hr`;
   city.innerHTML = response.data.city;
   let backgroundUrl = `Images/${response.data.condition.icon}.jpg`;
   body.style.backgroundImage = `url(${backgroundUrl})`;
@@ -67,7 +75,16 @@ function weather(city) {
   axios.get(url).then(showWeather);
   backgroundChange;
 }
-function showWeatherForecast(response) {}
+function showWeatherForecast(response) {
+  days.forEach((day) => {
+    forecast.innerHTML += `<div class="day">${days[dateToday.getDay()]}</div>
+      <div class="forecastIcon">Ö</div>
+      <div class="temperatureExtremes">
+      <div class="max">20°C</div>
+      <div class="min">10°C</div>
+      </div>`;
+  });
+}
 function weatherForecast(city) {
   let forecastApiKey = `9b5ff5067a4fcbft35338801bbo0df4a`;
   let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${forecastApiKey}`;

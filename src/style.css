@@ -76,6 +76,23 @@ header .time {
   padding: 20px;
   border-radius: 10px;
 }
+.day {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.884);
+}
+.temperatureExtremes {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.max {
+  color: rgb(241, 99, 99);
+}
+.min {
+  color: rgb(91, 91, 254);
+}
 footer {
   text-align: center;
   font-size: 12px;
