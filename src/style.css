@@ -64,6 +64,9 @@ header .time {
   transform: scale(0.7);
   margin: 0;
 }
+.forecast {
+  text-align: center;
+}
 .details {
   width: 300px;
   text-align: center;

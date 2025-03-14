@@ -8,7 +8,7 @@ if (dateToday.getMinutes() > 10) {
 } else {
   time.innerHTML = `${dateToday.getHours()}:0${dateToday.getMinutes()}`;
 }
-let day = [
+let days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -31,7 +31,7 @@ let month = [
   "November",
   "December",
 ];
-date.innerHTML = `${day[dateToday.getDay()]}, ${dateToday.getDate()} ${
+date.innerHTML = `${days[dateToday.getDay()]}, ${dateToday.getDate()} ${
   month[dateToday.getMonth()]
 } ${dateToday.getFullYear()}`;
 let tempNow = document.querySelector(".tempNow");
@@ -41,6 +41,7 @@ let feelsLikeTemp = document.querySelector(".feelsLikeTemp");
 let humidityPercentage = document.querySelector(".humidityPercentage");
 let windSpeed = document.querySelector(".windSpeed");
 let body = document.querySelector("body");
+let WeatherForecast = document.querySelector(".forecast");
 
 function showWeather(response) {
   tempNow.innerHTML = Math.round(response.data.temperature.current);
@@ -66,10 +67,18 @@ function weather(city) {
   axios.get(url).then(showWeather);
   backgroundChange;
 }
+function showWeatherForecast(response) {}
+function weatherForecast(city) {
+  let forecastApiKey = `9b5ff5067a4fcbft35338801bbo0df4a`;
+  let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${forecastApiKey}`;
+  axios.get(forecastUrl).then(showWeatherForecast);
+}
+
 function searchCity(event) {
   event.preventDefault();
   city.innerHTML = cityInput.value;
   weather(cityInput.value);
+  weatherForecast(cityInput.value);
 }
 let submitCityInput = document.querySelector("form.search-city");
 submitCityInput.addEventListener("submit", searchCity);
